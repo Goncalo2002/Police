@@ -120,7 +120,7 @@ local function ch_retirarsaldo(player,choice)
 											for k,v in ipairs(rows) do
 												local newsaldo = v.bmoney
 												if newsaldo ~= saldo then
-													vRP.giveMoney({user_id,response})
+													vRP.giveInventoryItem({user_id,"money",response,true})
 													vRPclient.notify(player,{"~y~SISTEMA: ~w~Você retirou $"..response.."."})
 													insertBusinessData(user_id, "[ID "..user_id.."] retirou $"..response.."")
 												else
